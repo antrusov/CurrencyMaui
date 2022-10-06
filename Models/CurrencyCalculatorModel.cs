@@ -41,12 +41,15 @@ public class CurrencyCalculatorModel: INotifyPropertyChanged
     }
     public double Ru2Usd
     {
-        get { return DateTime.Now.Millisecond; } //todo
+        get => Convert(Ru, Ru2Gold, Usd2Gold);
     }
     public double Ru2Eur
     {
-        get { return DateTime.Now.Millisecond; } //todo
+        get => Convert(Ru, Ru2Gold, Eur2Gold);
     }
+
+    private double Convert(double from, double fromCost, double toCost) =>
+        from * fromCost / (toCost == 0 ? 1 : toCost);
 
     public void OnPropertyChanged([CallerMemberName] string name = "") =>
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
