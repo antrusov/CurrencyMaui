@@ -4,11 +4,22 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:CurrencyMaui"
+    xmlns:views="clr-namespace:CurrencyMaui.Views"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <Tab Title="RU">
+            <ShellContent ContentTemplate="{DataTemplate views:RuPage}" />
+        </Tab>
+        <Tab Title="USD">
+            <ShellContent ContentTemplate="{DataTemplate views:UsdPage}" />
+        </Tab>
+        <Tab Title="EUR">
+            <ShellContent ContentTemplate="{DataTemplate views:EurPage}" />
+        </Tab>
+        <Tab Title="Settings">
+            <ShellContent ContentTemplate="{DataTemplate views:SettingsPage}" />
+        </Tab>
+    </TabBar>
 
 </Shell>
