@@ -19,17 +19,17 @@ public class CurrencyCalculatorModel: INotifyPropertyChanged
     public int Ru2Gold
     {
         get { return _ru2gold; }
-        set { _ru2gold = value; OnPropertyChanged(); }
+        set { _ru2gold = value; OnPropertyChanged(); OnNeedRecalcAll(); }
     }
     public int Usd2Gold
     {
         get { return _usd2gold; }
-        set { _usd2gold = value; OnPropertyChanged(); }
+        set { _usd2gold = value; OnPropertyChanged(); OnNeedRecalcAll(); }
     }
     public int Eur2Gold
     {
         get { return _eur2gold; }
-        set { _eur2gold = value; OnPropertyChanged(); }
+        set { _eur2gold = value; OnPropertyChanged(); OnNeedRecalcAll(); }
     }
 
     //ru
@@ -46,6 +46,12 @@ public class CurrencyCalculatorModel: INotifyPropertyChanged
     public double Ru2Eur
     {
         get => Convert(Ru, Ru2Gold, Eur2Gold);
+    }
+
+    private void OnNeedRecalcAll()
+    {
+        OnPropertyChanged("Ru2Usd");
+        OnPropertyChanged("Ru2Eur");
     }
 
     private double Convert(double from, double fromCost, double toCost) =>
