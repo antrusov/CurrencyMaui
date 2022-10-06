@@ -32,6 +32,22 @@ public class CurrencyCalculatorModel: INotifyPropertyChanged
         set { _eur2gold = value; OnPropertyChanged(); }
     }
 
+    //ru
+    private double _ru = 0;
+    public double Ru
+    {
+        get { return _ru; }
+        set { if (_ru != value) { _ru = value; OnPropertyChanged(); OnPropertyChanged("Ru2Usd"); OnPropertyChanged("Ru2Eur"); } }
+    }
+    public double Ru2Usd
+    {
+        get { return DateTime.Now.Millisecond; } //todo
+    }
+    public double Ru2Eur
+    {
+        get { return DateTime.Now.Millisecond; } //todo
+    }
+
     public void OnPropertyChanged([CallerMemberName] string name = "") =>
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 }

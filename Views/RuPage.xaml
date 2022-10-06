@@ -4,9 +4,10 @@
              x:Class="CurrencyMaui.Views.RuPage"
              Title="RuPage">
     <VerticalStackLayout>
+        <Entry Text="{Binding Ru}"/>
         <Label 
-            Text="RU"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            Text="{Binding Ru2Usd, StringFormat='USD={0}'}" />
+        <Label 
+            Text="{Binding Ru2Eur, StringFormat='EUR={0}'}" />
     </VerticalStackLayout>
 </ContentPage>
