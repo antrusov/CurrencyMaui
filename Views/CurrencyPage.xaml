@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CurrencyMaui.Views.RuPage"
-             Title="RuPage">
+             x:Class="CurrencyMaui.Views.CurrencyPage"
+             Title="CurrencyPage">
     <VerticalStackLayout>
-        <Entry Text="{Binding Ru}"/>
+        <!--Entry Text="{Binding Ru}"/>
         <Label 
             Text="{Binding Ru2Usd, StringFormat='USD={0}'}" />
         <Label 
-            Text="{Binding Ru2Eur, StringFormat='EUR={0}'}" />
+            Text="{Binding Ru2Eur, StringFormat='EUR={0}'}" /-->
     </VerticalStackLayout>
 </ContentPage>

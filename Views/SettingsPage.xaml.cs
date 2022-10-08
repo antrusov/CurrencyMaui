@@ -1,4 +1,4 @@
-using CurrencyMaui.Models;
+using CurrencyMaui.ViewModels;
 
 namespace CurrencyMaui.Views;
 

@@ -1,4 +1,6 @@
-﻿using CurrencyMaui.Models;
+﻿using CurrencyMaui.Interfaces;
+using CurrencyMaui.Services;
+using CurrencyMaui.ViewModels;
 using CurrencyMaui.Views;
 
 namespace CurrencyMaui;
@@ -16,11 +18,12 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		builder.Services.AddSingleton<CurrencyCalculatorModel>();
-        builder.Services.AddSingleton<RuPage>();
-        builder.Services.AddSingleton<UsdPage>();
-        builder.Services.AddSingleton<EurPage>();
+		builder.Services.AddTransient<AppShell>();
+        builder.Services.AddTransient<AppShellViewModel>();
+
+        builder.Services.AddSingleton<CurrencyCalculatorModel>();
         builder.Services.AddSingleton<SettingsPage>();
+        builder.Services.AddSingleton<ICurrencyService, CurrencyLocalDbService>();
 
         return builder.Build();
 	}

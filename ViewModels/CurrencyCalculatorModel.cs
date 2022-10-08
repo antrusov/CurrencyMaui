@@ -6,9 +6,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CurrencyMaui.Models;
+namespace CurrencyMaui.ViewModels;
 
-public class CurrencyCalculatorModel: INotifyPropertyChanged
+public class CurrencyCalculatorModel : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler PropertyChanged;
 

@@ -7,7 +7,7 @@
     xmlns:views="clr-namespace:CurrencyMaui.Views"
     Shell.FlyoutBehavior="Disabled">
 
-    <TabBar>
+    <!--TabBar>
         <Tab Title="RU">
             <ShellContent ContentTemplate="{DataTemplate views:RuPage}" />
         </Tab>
@@ -20,6 +20,6 @@
         <Tab Title="Settings">
             <ShellContent ContentTemplate="{DataTemplate views:SettingsPage}" />
         </Tab>
-    </TabBar>
+    </TabBar-->
 
 </Shell>
